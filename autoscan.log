@@ -1,0 +1,95 @@
+autoscan: warning: missing AC_CHECK_FUNCS([memset]) wanted by: 
+	src/iso.c:274
+	src/iso.c:293
+	src/iso.c:401
+autoscan: warning: missing AC_CHECK_FUNCS([mkdir]) wanted by: 
+	src/extract.c:210
+autoscan: warning: missing AC_CHECK_FUNCS([strcasecmp]) wanted by: 
+	src/utils.c:196
+autoscan: warning: missing AC_CHECK_FUNCS([strchr]) wanted by: 
+	src/utils.c:130
+	src/utils.c:154
+	src/utils.c:155
+autoscan: warning: missing AC_CHECK_FUNCS([strstr]) wanted by: 
+	src/common_archive.c:125
+	src/extract.c:92
+	src/iso.c:496
+	src/iso.c:550
+	src/tar.c:93
+	src/gui_cb.c:1040
+	src/gui_cb.c:1040
+	src/rar.c:133
+	src/rar.c:133
+autoscan: warning: missing AC_CHECK_HEADERS([fcntl.h]) wanted by: 
+	src/common_archive.c:30
+autoscan: warning: missing AC_C_CONST wanted by: 
+	src/common_archive.c:39
+	src/bzip2.h:59
+	src/bzip2.h:59
+	src/iso.c:613
+	src/gui_cb.c:318
+	src/gui_cb.c:318
+	src/gui_cb.c:997
+	src/gui_cb.c:1114
+	src/main.c:66
+	src/main.c:214
+	src/main.c:214
+	src/utils.h:22
+	src/utils.h:22
+	src/utils.h:22
+	src/utils.h:22
+	src/utils.h:24
+	src/utils.h:29
+	src/utils.h:29
+	src/gconf.c:42
+	src/gconf.c:68
+	src/add.c:38
+	src/gui_cb.h:72
+	src/gui_cb.h:72
+	src/gui_cb.h:77
+	src/gconf.h:34
+	src/gconf.h:35
+	src/iso.h:162
+	src/main.h:49
+	src/main.h:57
+	src/utils.c:33
+	src/utils.c:33
+	src/utils.c:36
+	src/utils.c:50
+	src/utils.c:50
+	src/utils.c:50
+	src/utils.c:50
+	src/utils.c:55
+	src/utils.c:174
+	src/utils.c:176
+	src/utils.c:187
+	src/utils.c:187
+autoscan: warning: missing AC_FUNC_MALLOC wanted by: 
+	src/iso.c:446
+	src/iso.c:450
+	src/iso.c:455
+autoscan: warning: missing AC_FUNC_MEMCMP wanted by: 
+	src/iso.c:832
+	src/iso.c:837
+	src/iso.c:842
+	src/gui_cb.c:844
+	src/gui_cb.c:844
+	src/gui_cb.c:848
+	src/gui_cb.c:852
+	src/gui_cb.c:854
+	src/gui_cb.c:854
+	src/gui_cb.c:856
+	src/gui_cb.c:860
+	src/gui_cb.c:1023
+	src/gui_cb.c:1023
+autoscan: warning: missing AC_HEADER_SYS_WAIT wanted by: 
+	src/common_archive.c:35
+	src/gui_cb.h:27
+autoscan: warning: missing AC_PROG_RANLIB wanted by: 
+	ltmain.sh:6809
+autoscan: warning: missing AC_TYPE_OFF_T wanted by: 
+	src/iso.c:205
+	src/iso.c:600
+	src/iso.c:704
+autoscan: warning: missing AC_TYPE_SIGNAL wanted by: 
+	src/rpm.c:54

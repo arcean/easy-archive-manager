@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/kp2/172869/!svn/ver/153/archmanager-0.0.3/debian
+END
+control
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/kp2/172869/!svn/ver/153/archmanager-0.0.3/debian/control
+END
+dirs
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/kp2/172869/!svn/ver/33/archmanager-0.0.3/debian/dirs
+END
+compat
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/kp2/172869/!svn/ver/33/archmanager-0.0.3/debian/compat
+END
+postinst
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/kp2/172869/!svn/ver/33/archmanager-0.0.3/debian/postinst
+END
+postrm
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/kp2/172869/!svn/ver/33/archmanager-0.0.3/debian/postrm
+END
+install
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/kp2/172869/!svn/ver/153/archmanager-0.0.3/debian/install
+END
+changelog
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/kp2/172869/!svn/ver/33/archmanager-0.0.3/debian/changelog
+END
+rules
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/kp2/172869/!svn/ver/153/archmanager-0.0.3/debian/rules
+END

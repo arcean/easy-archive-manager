@@ -1,0 +1,18 @@
+Source: archmanager
+Section: user/utilities
+Priority: optional
+Maintainer: Tomasz Pieniazek <t.pieniazek@gazeta.pl>
+XSBC-Bugtracker: 
+Build-Depends: cdbs, debhelper (>= 5), dpatch, autotools-dev, automake,
+ libgtk2.0-dev (>= 2.8), libhildon1-dev, libhildonfm2-dev,
+ libosso-dev, libdbus-1-dev, maemo-optify, libgconf2-dev (>= 2.6.2)
+Standards-Version: 3.7.3
+
+Package: archmanager
+Architecture: any
+Depends: libatk1.0-0 (>= 1.24.0), libc6 (>= 2.5.0-1), libcairo2, libfontconfig1 (>= 2.6.0), libfreetype6 (>= 2.3.9), libglib2.0-0 (>= 2.20.0), libgtk2.0-0 (>= 2:2.12.9-0osso1), libpango1.0-0, libpixman-1-0 (>= 0.14.0-9+0m5), libpng12-0 (>= 1.2.13-4), libx11-6, libxrender1, zlib1g (>= 1:1.2.1), tar-gnu, zip, unzip, bzip2, unrar, p7zip, lzma
+Recommends: arj, lha
+Description: Archive Manager.
+ archManager is an application for manipulating
+ 7z, bzip2, gzip, rar, tar, zip, DEB and RPM files. It allows you to create
+ archives and add, extract, and delete files from them. 
