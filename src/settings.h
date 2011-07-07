@@ -36,8 +36,7 @@
 
 GtkWidget *settingsWindow;
 GtkWidget *sBox;
-GtkWidget *textEntry;
-GtkWidget *saveButton;
+GtkWidget *tempButton;
 GtkWidget *saveLabel;
 
 #ifdef GNM_USE_HILDON
@@ -45,8 +44,9 @@ GtkWidget *saveLabel;
 	GtkWidget *screenModeButton;
 #endif
 
-void am_a_create_settings_window ();
-void am_a_save_tmpdir_cb ();
+void am_a_create_settings_window();
+void am_a_save_tmpdir_cb();
+void am_a_temp_catalog_dialog();
 
 
 

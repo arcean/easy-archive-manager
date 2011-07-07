@@ -222,7 +222,7 @@ void am_a_new_archive (GtkMenuItem *menuitem, gpointer user_data)
 }
 
 /**
- * Closes currently active archive
+ * Close currently active archive
  *
  * @param menuitem Parents menuitem
  * @param user_data List of files (from MainWindow)
@@ -280,7 +280,7 @@ void am_a_close_archive (GtkMenuItem *menuitem, gpointer user_data)
 }
 
 /**
- * Selects all elements from the list
+ * Select all elements from the list
  *
  * @param menuitem Parents menuitem
  * @param user_data Data we want to pass
@@ -321,7 +321,7 @@ void am_a_deselect_all ( GtkMenuItem *menuitem , gpointer user_data )
 }
 
 /**
- * Creates a new message dialog
+ * Create a new message dialog
  *
  * @param window Parents window
  * @param mode Flag passed directly to the gtk_message_dialog_new
@@ -343,7 +343,7 @@ int ShowGtkMessageDialog ( GtkWindow *window, int mode, int type, int button, co
 }
 
 /**
- * Opens an archive
+ * Open an archive
  *
  * @param window Parents window
  * @param user_data Data we want to pass
@@ -486,7 +486,7 @@ void am_a_open_archive (GtkMenuItem *menuitem, gpointer data)
 }
 
 /**
- * Stops current task
+ * Stop current task
  *
  * @param window Parents window
  * @param user_data Data we want to pass
@@ -519,7 +519,7 @@ void am_a_cancel_archive ( GtkMenuItem *menuitem , gpointer data )
 }
 
 /**
- * Removes (selected) elements from an archive
+ * Remove (selected) elements from an archive
  *
  * @param window Parents window
  * @param user_data Data we want to pass
@@ -597,7 +597,7 @@ void am_a_delete_archive (GtkMenuItem *menuitem, gpointer user_data)
 }
 
 /**
- * Adds files to an archive
+ * Add files to an archive
  *
  * @param window Parents window
  * @param user_data Data we want to pass
@@ -648,7 +648,7 @@ void am_a_cat_filenames (GtkTreeModel *model, GtkTreePath *treepath, GtkTreeIter
 }
 
 /**
- * Extracts an archive
+ * Extract an archive
  *
  * @param window Parents window
  * @param user_data Data we want to pass
@@ -693,7 +693,7 @@ void am_a_extract_archive ( GtkMenuItem *menuitem , gpointer user_data )
 }
 
 /**
- * Creates Open file dialog
+ * Create Open file dialog
  *
  */
 gchar *am_a_open_file_dialog ()
@@ -779,7 +779,7 @@ gchar *am_a_open_file_dialog ()
 }
 
 /**
- * Creates a list which is used to display list of files
+ * Create a list which is used to display list of files
  *
  * @param window Parents window
  * @param column_names[] Defines the columns names
@@ -827,7 +827,7 @@ void am_a_create_liststore ( unsigned short int nc, gchar *columns_names[] , GTy
 }
 
 /**
- * Detects archive type
+ * Detect archive type
  *
  * @param archive Should contain AM_Archive type of data
  * @param filename Name of the archive

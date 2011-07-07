@@ -29,28 +29,60 @@
 #include "main.h"
 #include "gconf.h"
 
-void am_a_save_tmpdir_cb () {
-	whereToExtract = g_strdup(gtk_entry_get_text(textEntry));
+void am_a_save_tmpdir_cb() {
+	//whereToExtract = g_strdup(gtk_entry_get_text(textEntry));
 	if ((whereToExtract == NULL) || (whereToExtract == ""))
 		return;
 	confStoreLocation(whereToExtract);
 #ifdef GNM_USE_HILDON
-	smode = hildon_picker_button_get_active(screenModeButton);
+	smode = hildon_picker_button_get_active(HILDON_PICKER_BUTTON (screenModeButton));
 	hildon_banner_show_information (GTK_WIDGET (settingsWindow), NULL, "Settings saved");
 #endif
-	gtk_widget_hide(settingsWindow);	
+}
+
+void am_a_temp_catalog_dialog() {
+	static GtkWidget *File_Selector = NULL;
+	GtkFileFilter *filter;
+	gchar *path = NULL;
+	gint response;
+
+	if (File_Selector == NULL)
+	{
+#ifdef GNM_USE_HILDON
+		File_Selector = GTK_FILE_CHOOSER (hildon_file_chooser_dialog_new (MainWindow, GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER));
+		gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(File_Selector), whereToExtract);
+
+#else
+		File_Selector = gtk_file_chooser_dialog_new ( "Open",
+						GTK_WINDOW (MainWindow),
+						GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
+						GTK_STOCK_CANCEL,
+						GTK_RESPONSE_CANCEL,
+						"gtk-open",
+						GTK_RESPONSE_ACCEPT,
+						NULL);
+#endif
+	}
+
+	response = gtk_dialog_run (GTK_DIALOG (File_Selector));
+	if((response == GTK_RESPONSE_ACCEPT) || (response == GTK_RESPONSE_OK))
+	{
+		whereToExtract = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER (File_Selector)); 
+		hildon_button_set_value(HILDON_BUTTON(tempButton), whereToExtract);
+		am_a_save_tmpdir_cb();
+	}
+
+	gtk_widget_hide(File_Selector);
 }
 
 /**
  * Creates "Settings" window
  *
  */
-void am_a_create_settings_window (){
+void am_a_create_settings_window(){
 #ifdef GNM_USE_HILDON
 	settingsWindow = hildon_stackable_window_new ();
-	textEntry = hildon_entry_new (HILDON_SIZE_AUTO);
-	hildon_entry_set_text(textEntry, whereToExtract);
-	saveButton = hildon_button_new_with_text (HILDON_SIZE_FINGER_HEIGHT | HILDON_SIZE_AUTO_WIDTH, HILDON_BUTTON_ARRANGEMENT_HORIZONTAL, "Save settings", NULL);
+	tempButton = hildon_button_new_with_text(HILDON_SIZE_FINGER_HEIGHT | HILDON_SIZE_AUTO_WIDTH, HILDON_BUTTON_ARRANGEMENT_HORIZONTAL, "Temporary catalog", whereToExtract);
 
 	screenMode = hildon_touch_selector_new_text();
 	hildon_touch_selector_append_text (HILDON_TOUCH_SELECTOR (screenMode), "Auto");
@@ -62,27 +94,22 @@ void am_a_create_settings_window (){
 
 	hildon_picker_button_set_selector (HILDON_PICKER_BUTTON (screenModeButton), HILDON_TOUCH_SELECTOR (screenMode));
 
-	
 #else
-	settingsWindow = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-	textEntry = gtk_entry_new ();
-	gtk_entry_set_text(textEntry, whereToExtract);
-	saveButton = gtk_button_new_with_label ("Save setings");
+	settingsWindow = gtk_window_new (GTK_WINDOW_TOPLEVEL)
 #endif
-	gtk_window_set_title(settingsWindow, "Settings");
+	gtk_window_set_title(GTK_WINDOW(settingsWindow), "Settings");
 
 	saveLabel = gtk_label_new("Temporary catalog: ");
 
 	sBox = gtk_vbox_new (FALSE, 6);
 	gtk_container_add(GTK_CONTAINER(settingsWindow), sBox);
 	gtk_box_pack_start(sBox, saveLabel, FALSE, FALSE, 6);
-	gtk_box_pack_start(sBox, textEntry, FALSE, FALSE, 6);
+	gtk_box_pack_start(sBox, tempButton, FALSE, FALSE, 6);
 #ifdef GNM_USE_HILDON
 	gtk_box_pack_start(sBox, screenModeButton, FALSE, FALSE, 6);	
 #endif
-	gtk_box_pack_start(sBox, saveButton, FALSE, FALSE, 6);
 
-	g_signal_connect_after (saveButton, "clicked", G_CALLBACK (am_a_save_tmpdir_cb), NULL);
+	g_signal_connect_after (tempButton, "clicked", G_CALLBACK (am_a_temp_catalog_dialog), NULL);
 
 #ifdef GNM_USE_HILDON
 	if(smode == 0)
